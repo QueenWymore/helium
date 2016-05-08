@@ -1,0 +1,21 @@
+{
+    "name": "helium/helium",
+    "description": "The Helium Framework.",
+    "keywords": ["framework", "helium"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=7.0.0",
+        "helium/framework": "*"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Helium\\": "helium"
+        },
+        "classmap": [
+            "app/Controllers/"
+        ]
+    }
+}
