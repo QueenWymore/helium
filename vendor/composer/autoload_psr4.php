@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Helium\\' => array($baseDir . '/helium'),
+    'Helium\\' => array($baseDir . '/Helium'),
 );

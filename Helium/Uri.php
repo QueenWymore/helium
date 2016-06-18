@@ -28,7 +28,6 @@ class Uri
 	        $path['query_vars'][$t[0]] = $t[1];
 	      }
 	    }
-	    var_dump($path);
 	}	
 	    
 }

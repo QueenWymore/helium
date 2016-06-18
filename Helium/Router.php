@@ -18,9 +18,9 @@ class Router
         return $this;
     }
 
-    public function addRoute($uri, $action, $method)
+    public function addRoute($uri, $action, $method, $middleware = null)
     {
-        $route = new Route($uri, $action, strtoupper($method));
+        $route = new Route($uri, $action, strtoupper($method), $middleware);
         if (!array_key_exists($method, $this->routes)){
             $this->routes[$method] = [];
         }
@@ -42,13 +42,13 @@ class Router
     }
 
     /**
-     * @param Request $request
-     * @return Route
+     * @param Http\Request $request
+     * @return mixed
      * @throws NotFoundException
      */
-    public function match(Request $request)
+    public function match(Http\Request $request)
     {
-        foreach ($this->routes[$request->getMethod()] as $route) {
+        foreach ($this->routes[$request->getHttpMethod()] as $route) {
             $pattern = "@^" . preg_replace('/\\\:[a-zA-Z0-9\_\-]+/', '([a-zA-Z0-9\-\_]+)', preg_quote($route->getUri())) . "$@D";
             $params = [];
             if (preg_match($pattern, $request->getPath(), $params)){
@@ -57,7 +57,7 @@ class Router
                 return $route;
             }
         }
-        throw new NotFoundException();
+        throw new NotFoundException($request);
     }
 }
 

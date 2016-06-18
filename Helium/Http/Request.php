@@ -1,6 +1,6 @@
 <?php
 
-namespace Helium;
+namespace Helium\Http;
 
 
 class Request
@@ -8,7 +8,7 @@ class Request
   protected $path;
   protected $base_path;
   protected $call_parts;
-  protected $method;
+  protected $httpMethod;
   protected $params;
 
   public function __construct()
@@ -19,7 +19,7 @@ class Request
       $this->call_parts = explode('/', $this->path);
       array_shift($this->call_parts);
     }
-    $this->method = $_SERVER['REQUEST_METHOD'];
+    $this->httpMethod = $_SERVER['REQUEST_METHOD'];
 
     $this->params = ['get' => $_GET, 'post' => $_POST];
 
@@ -34,9 +34,9 @@ class Request
     return $this->path;
   }
 
-  public function getMethod()
+  public function getHttpMethod()
   {
-    return $this->method;
+    return $this->httpMethod;
   }
  
 }

@@ -1,11 +1,11 @@
 <?php
 
 
-class AppController
+class AppController extends Helium\Controller
 {
 	public function __construct()
 	{
-		echo 'app controller<br>';
+		parent::__construct();
 	}
 
 	public function test($param1, $param2)
