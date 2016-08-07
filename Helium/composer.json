@@ -1,0 +1,11 @@
+{
+  "name": "helium/helium",
+  "require-dev": {
+    "phpunit/phpunit": "5.4.*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Helium": ""
+    }
+  }
+}

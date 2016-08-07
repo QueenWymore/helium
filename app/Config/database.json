@@ -1,4 +1,6 @@
 {
-  "username": "root",
+  "host": "127.0.0.1",
+  "database": "helium",
+  "user": "root",
   "password": ""
 }

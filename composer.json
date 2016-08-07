@@ -5,14 +5,17 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=7.0.0",
-        "helium/framework": "*"
     },
     "require-dev": {
+        "phpunit/phpunit": "5.4.*"
     },
     "autoload": {
         "psr-4": {
-            "Helium\\": "Helium"
-        }
+            "Helium\\": "Helium",
+            "Lithium\\": "Lithium"
+        },
+        "classmap": [
+            "app"
+        ]
     }
 }

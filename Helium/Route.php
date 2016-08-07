@@ -18,7 +18,7 @@ class Route
         $this->uri = $uri;
         $this->action = $action;
         if (is_string($action) && strpos($action, self::SEPARATOR) !== false){
-            $actionArr = explode(':', $action);
+            $actionArr = explode(self::SEPARATOR, $action);
             $this->class = $actionArr[0];
             $this->method = $actionArr[1];
         }
