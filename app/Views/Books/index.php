@@ -6,5 +6,3 @@
 </div>
 
 <?php echo $test; ?>
-<?php echo $dupa;?>
-<?php echo $rzal;?>
