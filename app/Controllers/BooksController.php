@@ -5,14 +5,7 @@ class BooksController extends AppController
 {
     public function index()
     {
-        $book = new Book();
-        $book->save(['name' => 'O dupie maryni']);
-        //$this->setLayout('app.index');
-        $this->set('test', 'dupa xD');
-        $dupa = 'razdwatrzydupa';
-        $rzal = 'heheheheheeh';
-        $this->set(compact('dupa', 'rzal'));
-        $this->render();
+        
     }
 
     public function show($id)
@@ -22,6 +15,13 @@ class BooksController extends AppController
     }
 
     public function create(){
-
+        $book = new Book();
+        $book->save(['name' => 'BleBleble']);
+        //$this->setLayout('app.index');
+        $this->set('test', 'xd');
+        $test1 = 'razdwatrzydupa';
+        $test2 = 'heheheheheeh';
+        $this->set(compact('test1', 'test2'));
+        $this->render();
     }
 }
