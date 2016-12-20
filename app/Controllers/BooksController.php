@@ -19,7 +19,7 @@ class BooksController extends AppController
         $book->save(['name' => 'BleBleble']);
         //$this->setLayout('app.index');
         $this->set('test', 'xd');
-        $test1 = 'razdwatrzydupa';
+        $test1 = 'razdwatrzy';
         $test2 = 'heheheheheeh';
         $this->set(compact('test1', 'test2'));
         $this->render();
